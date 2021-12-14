@@ -1,6 +1,6 @@
 # Project 1 - Operating Systems [LINFO1252]
 ## Description 
-For the course LINFO1252 - Operating Systems given at UCLouvain to undergraduate Computer Scientists, we are were asked to do a study project on synchronisation primitives, mutexes and semaphores. The details about the study project are detailed in the report PDF, this README is to discuss the some implementations details. I recommend to first read the report then the code, for better understanding. 
+For the course LINFO1252 - Operating Systems given at UCLouvain to undergraduate Computer Scientists, we are were asked to do a study project on synchronisation primitives, mutexes and semaphores. The details about the study project are detailed in the report PDF, this README is to discuss the strcture of the code. I recommend to first read the report then the code, for better understanding. 
 
 ## Folder Structure
 ```
@@ -33,7 +33,7 @@ Below you will find a table with all the possible **Makefile** commands and thei
 
 | command          | functionalities                                                                                               |
 | :--------------- | :------------------------------------------------------------------------------------------------------------ |
-| make             | Compiles all the known executables in the `src` files and all the objects in the `src/` directory.             |
+| make             | Compiles all the known executables in the `src` files.                                                        |
 | make clean       | Cleans all the known executables in the root directory and all the objects in the `src/` directory.           |
 | make benchmark   | Runs all the synchronisation problems and the various implementations, then outputs the executime in a CSV file in the `csv/` directory that holds the same name as the problem. |
 | make `-B` graphs | Generates graphs for the each CSV files in the `csv/`, and saves the graph as png files in `graphs` directory. And also generates the comparison graphs if their respective CSV files are available. The `-B` is a flag to force the command to execute. |
