@@ -24,8 +24,8 @@
 #include "producer_consumer.h"
 
 int MAX = 1024;
-volatile int count_produced = 0;
-volatile int count_consumed = 0;
+int count_produced = 0;
+int count_consumed = 0;
 
 my_mut_t mutex;
 
@@ -74,9 +74,9 @@ void * producer (void * arg)
 
     while (signal)     
     {
-        my_mut_lock(args->buffer->mutex);
+        my_mut_lock(&mutex);
         count_produced++;
-        my_mut_unlock(args->buffer->mutex);
+        my_mut_unlock(&mutex);
 
         insert_item(args->buffer, rand());
         process();
@@ -120,9 +120,9 @@ void * consumer(void * arg)
 
     while ( signal )   // Signal that there's still items to consume
     {
-        my_mut_lock(args->buffer->mutex);
+        my_mut_lock(&mutex);
         count_consumed++;
-        my_mut_unlock(args->buffer->mutex);
+        my_mut_unlock(&mutex);
 
         get_item(args->buffer, &holder);
         process();

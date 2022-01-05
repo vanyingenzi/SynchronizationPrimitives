@@ -21,8 +21,8 @@
 #include "producer_consumer.h"
 
 int MAX = 1024;
-volatile int count_produced = 0;
-volatile int count_consumed = 0;
+int count_produced = 0;
+int count_consumed = 0;
 
 static pthread_mutex_t mutex;
 
