@@ -65,11 +65,7 @@ void my_mut_lock(my_mut_t * mutex)
  */
 void my_mut_unlock(my_mut_t * mutex)
 {
-    asm("movl $0, %%eax\n\t"
-        "xchgl %%eax, %0\n\t"
-        : "=m" (*mutex)
-        : /*No input operands*/
-        : "eax" );
+    *mutex = 0;
 }
 
 /**
